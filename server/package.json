@@ -1,0 +1,28 @@
+{
+  "name": "wavelength-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannahmkim/wavelength.git"
+  },
+  "author": "Hannah Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannahmkim/wavelength/issues"
+  },
+  "homepage": "https://github.com/hannahmkim/wavelength#readme",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.6",
+    "koa-views-render": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

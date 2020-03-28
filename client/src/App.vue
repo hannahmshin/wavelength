@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <img alt="Wavelength Logo" src="./assets/logo.png" />
-    <Player msg="Welcome to Wavelength" />
+    <WordPair left="Bad" />
+    <WordPair right="Good" />
   </div>
 </template>
 
 <script>
-import Player from './components/Player.vue'
+import WordPair from './components/WordPair.vue'
 
 export default {
   name: 'app',
   components: {
-    Player
+    WordPair
   }
 }
 </script>

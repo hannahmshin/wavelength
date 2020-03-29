@@ -1,15 +1,13 @@
 <template>
   <div id="app">
     <img alt="Wavelength Logo" src="./assets/logo.png" />
-    <div class="cards">
+    <div v-if="role != 'none'" class="cards">
       <Card v-bind:class="{ left: true }" v-bind:value="left" />
       <Spectrum v-bind:location="location" />
       <Card v-bind:class="{ right: true }" v-bind:value="right" />
     </div>
 
-    <div class="nav">
-      <button v-on:click="newGame">New Game</button>
-    </div>
+    <Menu v-bind:role="role" v-on:setRole="role = $event" v-on:newGame="newGame" v-on:reset="role = 'none'" />
   </div>
 </template>
 
@@ -17,12 +15,14 @@
 import Vue from 'vue'
 import Card from './components/Card.vue'
 import Spectrum from './components/Spectrum.vue'
+import Menu from './components/Menu.vue'
 import api from './lib/api.js'
 
 const state = {
   left: '',
   right: '',
-  location: -1
+  location: -1,
+  role: 'none'
 }
 
 function setData({ left, right, location }) {
@@ -35,7 +35,8 @@ export default {
   name: 'app',
   components: {
     Card,
-    Spectrum
+    Spectrum,
+    Menu
   },
   data: () => {
     return state
@@ -58,11 +59,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.cards {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
 </style>
